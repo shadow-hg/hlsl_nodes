@@ -2,15 +2,15 @@ Shader "Unlit/Emiss01"
 {
     Properties
     {
-        [HDR] _EmissionColor("EmissColor",color) = (1,1,1)
+        [HDR] _EmissionColor("EmissColor",color) = (1,1,1) 
         _Alpha("Alpha",float) = 0.5
     }
     SubShader
     {
         Tags{"RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProject" = "true" "LightMode" = "ForWardBase" }
-        Blend SrcAlpha OneMinusSrcAlpha
-        ZWrite On
-        Cull back
+        Blend SrcAlpha OneMinusSrcAlpha //透明度混合
+        ZWrite On //开启深度写入
+        Cull back //剔除背面
 
         Pass
         {
